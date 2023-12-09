@@ -38,7 +38,8 @@ class GenerativeAI:
             input_text,
             **parameters,
         )
-        #print(f"{response.text}")
-
-        return response.text
+        response_text = response.text
+        response_text = response_text.replace("```python", "").replace("```", "")
+        
+        return response_text
 
